@@ -36,6 +36,8 @@ exports.fetchDataFromDB = function(db) {
 					console.log('Some other error: ', err.code);
 				}
 			});
+		} else {
+			console.log(No Data/ new Data for processing);
 		}
 	});
 };
