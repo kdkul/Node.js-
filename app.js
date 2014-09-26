@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mySchedular = require('./custom_modules/mySchedular');
 
 //Database
 var mongo = require('mongoskin');
@@ -33,6 +34,7 @@ app.use(function(req,res,next){
     next();
 });
 
+mySchedular.startSchedularToGetData(db);
 app.use('/', routes);
 app.use('/users', users);
 

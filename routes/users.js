@@ -6,9 +6,11 @@ var pipeDelimited = require('../custom_modules/pipeDelimited');
  * POST to adduser.
  */
 router.post('/adduser', function(req, res) {
-    var db = req.db;
-    var insertData = pipeDelimited.getChangeInputData(req.body);
-    db.collection('userlist').insert(insertData, function(err, result){
+    var db = req.db; 
+	console.log("ADD USER");
+    var pipeDelimitedValue = pipeDelimited.getChangeInputData(req.body);
+	console.log(pipeDelimitedValue.userData);
+    db.collection('userlist').insert(pipeDelimitedValue , function(err, result){
         res.send(
             (err === null) ? { msg: '' } : { msg: err }
         );
