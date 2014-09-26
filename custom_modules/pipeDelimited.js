@@ -16,7 +16,7 @@ exports.getChangeInputData = function(originalReqData) {
 	}
 	return {
 		"userData" : pipeDelimitedValue,
-		"readFlag" : true
+		"processed" : 'N'
 	};
 };
 
