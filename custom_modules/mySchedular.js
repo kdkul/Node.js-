@@ -37,7 +37,7 @@ exports.fetchDataFromDB = function(db) {
 				}
 			});
 		} else {
-			console.log(No Data/ new Data for processing);
+			console.log("No Data/ new Data for processing");
 		}
 	});
 };
